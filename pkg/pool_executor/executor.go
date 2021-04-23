@@ -42,6 +42,7 @@ func (executor *PoolExecutor) startExecution() {
 		}
 		executor.threads++
 		i := i
+		t := t
 		go func() {
 			t()
 			executor.socket <- i
@@ -61,7 +62,7 @@ func (executor *PoolExecutor) startListening() {
 }
 
 // Execute Executes set of passed tasks.
-func (executor *PoolExecutor) Execute() {
+func (executor *PoolExecutor) Execute() bool {
 	// The listening should be started before
 	// to avoid lack of performance.
 	go executor.startListening()
@@ -69,4 +70,6 @@ func (executor *PoolExecutor) Execute() {
 
 	for !executor.isFinished {
 	}
+
+	return executor.isFinished
 }
