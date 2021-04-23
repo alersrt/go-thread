@@ -1,7 +1,7 @@
 package main
 
-// Task Representation of the task for execution.
-type Task interface {
+// CompletableTask Representation of the task for execution.
+type CompletableTask interface {
 
 	// Result Returns result of the execution.
 	Result() interface{}
