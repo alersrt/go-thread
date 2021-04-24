@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func TestExecute(t *testing.T) {
+func TestPoolExecutor_Execute(t *testing.T) {
 	// Arranges
 
 	socket := make(chan string)
