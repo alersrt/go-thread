@@ -1,24 +1,12 @@
 package pool_executor
 
 type PoolExecutor struct {
-
-	// The max amount of concurrent tasks.
-	capacity int
-
-	// Amount of the currently executed tasks.
-	threads int
-
-	// Amount tasks left for execution.
-	counter int
-
-	// Socket for signalling about finishing of the task execution.
-	socket chan int
-
-	// Tasks for execution.
-	tasks []func()
-
-	// Is all tasks finished.
-	isFinished bool
+	capacity   int      // The max amount of concurrent tasks.
+	threads    int      // Amount of the currently executed tasks.
+	counter    int      // Amount tasks left for execution.
+	socket     chan int // Socket for signalling about finishing of the task execution.
+	tasks      []func() // Tasks for execution.
+	isFinished bool     // Is all tasks finished.
 }
 
 // CreatePoolExecutor created new instance of the pool executor

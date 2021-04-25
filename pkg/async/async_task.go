@@ -3,8 +3,7 @@ package async
 // AsynchronousTask describes task with asynchronous
 // execution where.
 type AsynchronousTask struct {
-	// f Common function what should be executed.
-	f func() interface{}
+	f func() interface{} // f Common function what should be executed.
 }
 
 // NewTask Creates new AsynchronousTask instance.
