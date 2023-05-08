@@ -7,13 +7,13 @@ import (
 
 func TestAsynchronousTask_Result(t *testing.T) {
 	//	Arranges
-	testFunc := func() interface{} {
+	testFunc := func() any {
 		time.Sleep(2 * time.Second)
 		return true
 	}
 
 	//	Actions
-	testTask := NewTask(testFunc)
+	testTask := NewTask[any](testFunc)
 	res := <-testTask.Result()
 
 	//	Asserts

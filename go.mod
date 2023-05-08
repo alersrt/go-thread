@@ -1,5 +1,5 @@
-module github.com/alersrt/go-thread
+module go-thread
 
-go 1.16
+go 1.20
 
-require github.com/google/uuid v1.2.0
+require github.com/google/uuid v1.3.0
